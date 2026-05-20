@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our First Year - Dashboard</title>
+    <link rel="stylesheet" href="STYLE/style.css">
+    
+</head>
+<body>
+
+<body>
+
+ <button id="musicToggleBtn" onclick="toggleDashboardMusic()" style="position: fixed; top: 20px; right: 20px; z-index: 100000; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,183,197,0.3); color: #ffb7c5; padding: 10px 15px; border-radius: 20px; font-size: 0.9rem; cursor: pointer; backdrop-filter: blur(8px);">🎵 Music: Off</button>
+    <audio id="bgMusic" src="MUSIC/bgmusic.mp3" loop></audio>
+
+    <canvas id="loveRainCanvas"></canvas>
+
+<div class="video-bg-container">
+    <video autoplay loop muted playsinline 
+           id="bgVideo"
+           preload="auto" 
+           clear="true"
+           onended="this.play()" 
+           style="background: #0c0014;">
+        <source src="VIDEO/BG.MOV" type="video/mp4">
+    </video>
+</div>
+
+    <div class="content-overlay central-align">
+
+        <header class="dashboard-header">
+            <h1>Happy 1st Anniversary ❤️</h1>
+            <p id="anniversaryCounter" class="counter">Loading our timeline...</p>
+            
+            <div class="logout-container">
+                <a href="#" class="logout-btn" onclick="openLogoutModal(event)">
+                    <span>Logout 🔒</span>
+                </a>
+            </div>
+        </header> <nav class="dashboard-menu">
+            <a href="pictures.html" class="menu-btn">
+                <span class="btn-icon">📸</span>
+                <span class="btn-text">Our Pictures</span>
+            </a>
+
+            <a href="memories.html" class="menu-btn">
+                <span class="btn-icon">🎥</span>
+                <span class="btn-text">Video Memories</span>
+            </a>
+
+            <a href="letter.html" class="menu-btn">
+                <span class="btn-icon">✍️</span>
+                <span class="btn-text">Appreciation Letter</span>
+            </a>
+        </nav>
+        
+    <div id="logoutModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>Happy Anniversary Sayang, will u love me forever? 🥺❤️</h3>
+            <div class="modal-buttons">
+                <a href="logout.html" class="modal-btn btn-yes" onclick="alert('Love youu !! ❤️');">Yes</a>
+                <button onclick="openTrapModal()" class="modal-btn btn-no">No</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="trapModal" class="modal-overlay">
+        <div class="modal-box">
+            <h3>Ehh mana boleh No! Pleaseee? 🥺👉👈❤️</h3>
+            <div class="modal-buttons">
+                <a href="logout.html" class="modal-btn btn-yes" style="padding: 12px 60px;" onclick="alert('Love youu !! ❤️');">Yes!</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="SCRIPT/script.js?v=4" defer></script>
+
+    <script src="SCRIPT/script.js?v=3" defer></script>
+</body>
+</html>

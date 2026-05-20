@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* --- MAIN PAGE HEADER POSITIONING --- */
+.page-container section h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #ffd1dc;
+    font-size: 2.4rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 20px rgba(255, 183, 197, 0.4);
+    font-weight: 600;
+    text-align: center;
+}
+
+/* --- THE MAIN CARD: NEON GLASSMORPHISM --- */
+.letter-paper {
+    background: rgba(20, 10, 30, 0.6); /* Darker backdrop to make text pop instantly */
+    border: 1px solid rgba(255, 183, 197, 0.25);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    
+    padding: 4rem 3.5rem;
+    border-radius: 32px; /* Smoother, rounder premium look */
+    width: 95%;
+    max-width: 720px;
+    margin: 2rem auto;
+    position: relative;
+    z-index: 10;
+    box-sizing: border-box;
+    
+    /* Layered drop shadows with a subtle pink ambient glow underneath */
+    box-shadow: 
+        0 25px 55px rgba(0, 0, 0, 0.75),
+        0 0 50px rgba(255, 183, 197, 0.08);
+}
+
+/* --- DESIGN FIX: LAYOUT STRUCTURE SHAPING --- */
+.paper-lines {
+    background-image: none !important;
+    display: flex;
+    flex-direction: column;
+}
+
+/* CUSTOM INTRO SHAPING (Pops the opening greeting out) */
+.letter-content::first-line {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #ffb7c5;
+    letter-spacing: 1px;
+}
+
+/* --- TYPOGRAPHY UPGRADE --- */
+.letter-content {
+    color: #ffffff;
+    font-size: 1.55rem;
+    line-height: 2.4rem; /* Added air between sentences so it reads beautifully */
+    text-align: left;
+    max-height: 48vh;
+    overflow-y: auto;
+    padding-right: 25px;
+    font-family: 'Caveat', cursive;
+    white-space: pre-line;
+}
+
+/* Clean, organic block separation for each unique paragraph milestone */
+.letter-content p {
+    margin: 0 0 2.2rem 0;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* --- GLOWING ROMANTIC DIVIDER LINE --- */
+/* This adds a glowing accent bar right above your signature to visually finish the layout */
+.letter-signature::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #ffb7c5, transparent);
+    margin-left: auto;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 0 10px rgba(255, 183, 197, 0.8);
+}
+
+/* --- SIGNATURE REPOSITIONING --- */
+.letter-signature {
+    margin-top: 3.5rem;
+    text-align: right;
+    color: #ffb7c5;
+    font-size: 1.75rem;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+    text-shadow: 0 0 15px rgba(255, 183, 197, 0.5);
+    letter-spacing: 0.5px;
+}
+
+/* --- GLOWING PINK SCROLLBAR ENGINE --- */
+.letter-content::-webkit-scrollbar {
+    width: 6px;
+}
+.letter-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 20px;
+}
+.letter-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(#ffb7c5, #ffd1dc);
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(255, 183, 197, 0.5);
+}
+
+/* --- BACK TO DASHBOARD NAVIGATION BUTTON --- */
+.back-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.back-btn {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.04) !important;
+    color: #ffb7c5 !important;
+    border: 1px solid rgba(255, 183, 197, 0.3) !important;
+    text-decoration: none !important;
+    padding: 12px 32px !important;
+    border-radius: 50px !important;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.back-btn:hover {
+    color: #ffffff !important;
+    border-color: #ffd1dc !important;
+    background: rgba(255, 183, 197, 0.2) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 183, 197, 0.3);
+}

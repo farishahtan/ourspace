@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Safe Space 🔒</title>
+    <link rel="stylesheet" href="STYLE/style.css">
+</head>
+<body class="login-body">
+
+        <button id="musicToggleBtn" onclick="toggleDashboardMusic()" style="position: fixed; top: 20px; right: 20px; z-index: 100000; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,183,197,0.3); color: #ffb7c5; padding: 10px 15px; border-radius: 20px; font-size: 0.9rem; cursor: pointer; backdrop-filter: blur(8px);">🎵 Music: Off</button>
+    <audio id="bgMusic" src="MUSIC/bgmusic.mp3" loop></audio>
+  
+
+    <canvas id="loveRainCanvas"></canvas>
+
+    <div class="login-card">
+        <h2>Enter Our Space ✨</h2>
+        <p class="login-subtitle">For SyafiqBoi & Ainfarishah only.</p>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Your Name</label>
+                <input type="text" id="username" placeholder="Who is logging in?" required autocomplete="off">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Our Secret Date</label>
+                <input type="password" id="password" placeholder="DDMMYYYY" required>
+            </div>
+            
+            <button type="submit" class="login-btn">Unlock Memories 🔑</button>
+            <p id="errorMessage" class="error-msg"></p>
+        </form>
+    </div>
+
+    <script src="SCRIPT/script.js" defer></script>
+</body>
+</html>

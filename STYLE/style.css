@@ -1,0 +1,354 @@
+/* --- RESET & BASIC STYLES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0c0014; /* Deep night sky */
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* FIX: Allows vertical scrolling safely on phones while preventing horizontal clipping */
+    overflow-x: hidden; 
+    overflow-y: auto;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* --- THE CANVAS (LOVE RAIN) --- */
+#loveRainCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display: block;
+    pointer-events: none; /* FIX: Prevents canvas from blocking clicks on buttons underneath it */
+}
+
+/* --- LOGIN CONTAINER STYLES --- */
+.login-body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* FIX: Ensures it centers the card perfectly even without fixed body heights */
+}
+
+.login-card {
+    position: relative;
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 183, 197, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* FIX: Added Safari mobile support */
+    padding: 2.5rem;
+    border-radius: 24px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    text-align: center;
+}
+
+.login-card h2 {
+    color: #ffd1dc;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
+}
+
+.login-subtitle {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.85rem;
+    color: #ffb7c5;
+    margin-bottom: 0.4rem;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    border-color: #ffb7c5;
+    background: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 0 10px rgba(255, 183, 197, 0.2);
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #ffb7c5, #d63447);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.login-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(214, 52, 47, 0.4);
+}
+
+.error-msg {
+    color: #ff4a4a;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    min-height: 1.2rem;
+}
+
+/* --- DASHBOARD STYLES --- */
+.content-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100vw;
+    min-height: 100vh; /* FIX: Changed from height: 100vh to allow scaling content */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* FIX: Fully implemented layout system to force dashboard centering */
+.central-align {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.dashboard-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.dashboard-header h1 {
+    font-size: 2.8rem;
+    color: #ffd1dc;
+    margin-bottom: 0.8rem;
+    text-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
+}
+
+.counter {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #ff9fb1;
+}
+
+.dashboard-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.menu-btn {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 183, 197, 0.2);
+    color: #ffb7c5;
+    text-decoration: none;
+    padding: 18px 25px;
+    border-radius: 16px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px); /* FIX: Added Safari mobile support */
+    transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+    background: rgba(255, 183, 197, 0.15);
+    color: #ffd1dc;
+    border-color: #ffd1dc;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 183, 197, 0.1);
+}
+
+.btn-icon { 
+    font-size: 1.5rem; 
+}
+
+/* --- LOGOUT BUTTON DESIGN --- */
+.logout-container {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.logout-btn {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    color: #ff4a4a; /* Translucent reddish tint for safety action */
+    border: 1px solid rgba(255, 74, 74, 0.2);
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px); /* FIX: Added Safari mobile support */
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background: rgba(255, 74, 74, 0.15);
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(255, 74, 74, 0.15);
+}
+
+/* --- CUSTOM YES/NO POP-UP BOX --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(12, 0, 20, 0.6); /* Translucent midnight tint */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 9999; /* Forces it over absolutely everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+/* Class applied by JavaScript to fade the window into view */
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 183, 197, 0.2);
+    padding: 2.5rem;
+    border-radius: 20px;
+    max-width: 420px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-box {
+    transform: scale(1);
+}
+
+.modal-box h3 {
+    color: #ffd1dc;
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-weight: 600;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+}
+
+.modal-btn {
+    padding: 12px 35px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+/* Beautiful Pink "Yes" button */
+.btn-yes {
+    background: linear-gradient(135deg, #ffb7c5, #d63447);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 15px rgba(214, 52, 71, 0.3);
+}
+
+.btn-yes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 52, 71, 0.5);
+}
+
+/* Translucent Silver "No" button */
+.btn-no {
+    background: rgba(255, 255, 255, 0.08);
+    color: #aaa;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-no:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* --- LOW OPACITY BACKGROUND VIDEO LOOP --- */
+.video-bg-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+    background-color: #0c0014; /* Fallback night sky color */
+}
+
+.video-bg-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.12; 
+    pointer-events: none;
+    
+    /* PERFORMANCE ENHANCEMENTS: */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translate(-50%, -50%) translateZ(0); /* Forces GPU activation */
+    will-change: transform;
+    image-rendering: optimizeSpeed;
+}
+

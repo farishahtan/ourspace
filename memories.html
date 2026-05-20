@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Video Memories - SyafiqBoi & Ainfarishah</title>
+   <link rel="stylesheet" href="STYLE/memories.css?v=1">
+    <link rel="stylesheet" href="STYLE/style.css">
+</head>
+<body>
+
+     <button id="musicToggleBtn" onclick="toggleDashboardMusic()" style="position: fixed; top: 20px; right: 20px; z-index: 100000; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,183,197,0.3); color: #ffb7c5; padding: 10px 15px; border-radius: 20px; font-size: 0.9rem; cursor: pointer; backdrop-filter: blur(8px);">🎵 Music: Off</button>
+    <audio id="bgMusic" src="MUSIC/bgmusic.mp3" loop></audio>
+    <canvas id="loveRainCanvas"></canvas>
+
+    <div class="content-overlay">
+        <div class="page-container section">
+            <h2>A Stream of Us 🎥</h2>
+            
+            <div class="video-box">
+                <video controls>
+                    <source src="VIDEO/ourmemories.MOV" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <p class="video-caption">Press play for a little trip down memory lane... 🍿</p>
+
+            <div class="back-container">
+                <a href="dashboard.html" class="back-btn">← Back to Dashboard</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="SCRIPT/script.js" defer></script>
+</body>
+</html>
